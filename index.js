@@ -15,10 +15,10 @@ function addShowTableMenu() {
     document.getElementById("options").addEventListener("click", () => { //con un click se muestra el contenido
         let temp = `
               <ul class="list-group list-group-flush" id="options">
-                <li class="list-group-item"><a onclick="getCharacters()" class="link-dark" href="#">Characters</a></li>
-                <li class="list-group-item"><a onclick="getSeries()" class=" link-dark" href="#">Series</a></li>
-                <li class="list-group-item"><a onclick="getStories()"class=" link-dark" href="#">Stories</a></li>
-                <li class="list-group-item"><a class="link-dark" href="#">Spoiler</a></li>
+                <li class="list-group-item"><a onclick="getCharacters()" class="link-dark" href="#containerCharacters">Characters</a></li>
+                <li class="list-group-item"><a onclick="getSeries()" class=" link-dark" href="#containerSeries">Series</a></li>
+                <li class="list-group-item"><a onclick="getStories()"class=" link-dark" href="#containerStories">Stories</a></li>
+                <li class="list-group-item"><a class="link-dark" href="#containerSpoiler">Spoiler</a></li>
              </ul>
         `
         divShowTabla.innerHTML = temp;
@@ -105,6 +105,6 @@ async function showSeries(array) { //propiedades: description, endYear,title
 };
     
 
-//Detalles que quiero agregar, por ahora pienso, un proximamente: que solo aprezcan los ocho parrafos relacionados con lo que el usuario selecciono en el menu, no que se vayan mostrando todos y sumando uno detras del otro como ahora.
+
 
 
