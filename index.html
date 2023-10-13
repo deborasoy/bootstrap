@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Responsive Design y Bootstrap</title>
+</head>
+<!--nav reponsive, el item options solo lo muestra en pantallas pequeñas con la funcionalidad de poder ver la tabla-->
+<!--dos items inhabilitados o desactivados segun diseño previsto, y uno en funcionamiento para todas las pantallas, al igual que el input-->
+<!---->
+<body> 
+    <nav class="navbar bg-secondary navbar-expand-lg border-body">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white  me-5" href="#">MARVEL STUDIOS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-3 mb-lg-2">
+                        <li class="nav-item me-5">
+                            <a class="nav-link text-white " aria-current="page" href="#">About</a>
+                        </li>
+                        
+                        <li class="nav-item me-5">
+                            <a class=" nav-link disabled"  aria-disabled="true" href="#">Home</a>
+                        </li>
+                        <li class="nav-item me-5">
+                            <a class=" nav-link disabled" aria-disabled="true" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item me-5 d-lg-none">
+                            <a class=" nav-link text-white" aria-disabled="true" href="#" id="options">Options</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                </div>
+        </div>
+    </nav>
+<div class="container text-center ">
+    <h2 class="secondary">Information about the Marvel World</h2>
+</div>
+<!--carrucel que muetra tres frases cada 2 segundos en bucle-->
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner text-bg-light text-center">
+        <div class="carousel-item active" data-bs-interval="2000">
+            <p>...Discover...Ask yourself...Investigate...</p>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <p>... Have fun...Learn or die trying...</p>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <p>...Joke! Start again soldier...</p>
+        </div>
+
+    </div>
+</div>
+<!--Div con el menu para pantallas pequeñas sm y md. se añade contenido en index.js-->
+<div id="tablaMenu" class="border-1 d-lg-none m-auto" style="width: 30rem"></div>
+<!--Div con el menu para pantallas grandes lg-->
+<div class="card border-1 m-5 d-none d-lg-block float-lg-start " style="width: 15rem">
+    <ul class="list-group list-group-flush" id="options">
+        <li class="list-group-item "><a onclick="getCharacters()" class="characters link-dark" href="#">characters</a></li>
+        <li class="list-group-item"><a onclick="getSeries()" class=" series link-dark " href="#">Series</a></li>
+        <li class="list-group-item "><a onclick="getStories()" class=" stories link-dark" href="#">stories</a></li>
+        <li class="list-group-item "><a  class="link-dark" href="#containerSpoiler">Spoiler</a></li>
+    </ul>
+</div>
+<!--Divs para los ocho parrafos segun el diseño previsto por cada div, se muestra la opcion que elija el usuario -->
+<div id="caja">
+    <div class="container">
+        <div class="row" id="containerCharacters">
+        
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" id="containerSeries">
+        
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" id="containerStories">
+        
+        </div>
+    </div>
+    <!--Div defaut, el primero que aparece, el unico que no viene de una api y no se estructura en js-->
+    <div class="container">
+        <div class="row" id="containerSpoiler">
+            <h6>Una lectura educativa en español, porque no todo es ingles señores</h6>
+            <div class="text-bg-light col-lg-4 col-md-6 col-sm-12 mt-2 mb-2">
+                <p>¡Oh, los spoilers, esas traicioneras revelaciones que desatan el caos en el reino de nuestras emociones! Son como el
+                bromista cósmico que revela el final de una película antes de que tengas la oportunidad de saborear el dulce néctar del
+                suspense. ¿No es un verdadero crimen emocional?</p>
+            </div>
+            <div class="text-bg-light col-lg-4 col-md-6 col-sm-12 mt-2 mb-2">
+                <p>Es como si la anticipación y la sorpresa fueran un delicioso pastel y los spoilers fueran esa persona que aparece con un
+                tenedor antes de que hayas probado el primer bocado. ¡Un acto verdaderamente vil contra la humanidad y los postres!</p>
+            </div>
+            <div class="text-bg-light col-lg-4 col-md-6 col-sm-12 mt-2 mb-2">
+                <p>Los spoilers son como mosquitos en una noche de verano, zumbando alrededor de tu cabeza mientras intentas disfrutar de
+                tu película o serie favorita. Justo cuando llega ese momento climático, BAM, alguien suelta el spoiler como si
+                estuvieran lanzando confeti en una fiesta.</p>
+            </div>
+            <div class="text-bg-light col-lg-4 col-md-6 col-sm-12 mt-2 mb-2">
+                <p>¡Es como si estuvieran tratando de extinguir la llama de nuestra emoción con un balde de agua fría!</p>
+            </div>
+            <div class="text-bg-light col-lg-4 col-md-6 col-sm-12 mt-2 mb-2">
+                <p>Recibir un spoiler es como abrir un regalo de cumpleaños y descubrir lo que hay dentro antes de tener la oportunidad de
+                rasgar el papel de regalo. La emoción de la sorpresa se desvanece más rápido que un helado en un día caluroso.</p>
+            </div>
+            <div class="text-bg-light col-lg-4 col-md-6 col-sm-12 mt-2 mb-2">
+                <p>Es como si alguien te diera un mapa del tesoro y luego te dijera dónde está enterrado el tesoro antes de que hayas
+                tenido la oportunidad de seguir las pistas. ¡Dónde está la emoción de la búsqueda del tesoro y el misterio del X que
+                marca el lugar!</p>
+            </div>
+            <div class="text-bg-light col-lg-4 col-md-6 col-sm-12 mt-2 mb-2">
+                <p>Así que, la próxima vez que sientas la tentación de soltar un spoiler, piensa en el pequeño niño dentro de ti que ama
+                las sorpresas y las maravillas del descubrimiento. Estás a punto de aplastar la alegría infantil con el zapato del
+                spoiler. ¡Mantengamos viva la emoción y el asombro en el mundo del entretenimiento!</p>
+            </div>
+            <div class="text-bg-light col-lg-4 col-md-6 col-sm-12 mt-2 mb-2">
+                <p>Porque, al final del día, todos somos exploradores en este vasto océano de historias, ¡y los spoilers son como tiburones
+                que amenazan con devorar nuestra diversión! ¡Aventurémonos juntos en el mundo del entretenimiento sin temor al spoiler,
+                y dejemos que la magia de la sorpresa nos guíe en nuestro viaje cinematográfico!</p>
+            </div>
+        
+        </div>
+    </div>
+</div>
+<footer class="text-muted py-5">
+    <div class="container">
+        <p class="float-end mb-1">
+            <a href="#">Go back up</a>
+        </p>
+        <p class="mb-1">This Website consume data <a href="developer.marvel.com">MarvelApi</a></p>
+        <p class="mb-1">with educational purposes</p>
+    </div>
+</footer>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+<script src="index.js"></script>
+</body>
+</html>
